@@ -53,3 +53,24 @@ const articles = [
   for(let i = 0; i < articles.length; i++){
       let uuid = self.crypto.randomUUID();
   }
+
+  const art = document.querySelector("input[type='button']");
+  art.addEventListener('click', function (even){
+    even.preventDefault();
+    let title_a = document.getElementById("title");
+    let content_a = document.getElementById("content");
+    let author_a = document.getElementById("author");
+    let zajawka_a = document.getElementById("zajawka");
+
+    let artykul = {
+      id: uuid,
+      title: title_a,
+      content: content_a,
+      author: author_a
+    };
+
+    articles.unshift(artykul);
+
+  })
+
+  console.log(articles);
